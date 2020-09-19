@@ -8,12 +8,12 @@ import java.util.List;
 
 import org.apache.commons.lang3.reflect.FieldUtils;
 
-import com.ljunggren.sanitizer.sanitation.CatchAllSanitationChain;
-import com.ljunggren.sanitizer.sanitation.ConcurrentSpaceSanitationChain;
-import com.ljunggren.sanitizer.sanitation.LowercaseSanitationChain;
-import com.ljunggren.sanitizer.sanitation.RemoveSanitationChain;
-import com.ljunggren.sanitizer.sanitation.TrimSanitationChain;
-import com.ljunggren.sanitizer.sanitation.UppercaseSanitationChain;
+import com.ljunggren.sanitizer.sanitation.CatchAllSanitation;
+import com.ljunggren.sanitizer.sanitation.ConcurrentSpaceSanitation;
+import com.ljunggren.sanitizer.sanitation.LowercaseSanitation;
+import com.ljunggren.sanitizer.sanitation.RemoveSanitation;
+import com.ljunggren.sanitizer.sanitation.TrimSanitation;
+import com.ljunggren.sanitizer.sanitation.UppercaseSanitation;
 
 import lombok.Getter;
 
@@ -65,12 +65,12 @@ public class Sanitizer {
     }
     
     private void sanitationChain(Annotation annotation, Item item) {
-        new ConcurrentSpaceSanitationChain()
-                .nextChain(new LowercaseSanitationChain()
-                .nextChain(new RemoveSanitationChain()
-                .nextChain(new TrimSanitationChain()
-                .nextChain(new UppercaseSanitationChain()
-                .nextChain(new CatchAllSanitationChain()
+        new ConcurrentSpaceSanitation()
+                .nextChain(new LowercaseSanitation()
+                .nextChain(new RemoveSanitation()
+                .nextChain(new TrimSanitation()
+                .nextChain(new UppercaseSanitation()
+                .nextChain(new CatchAllSanitation()
                         ))))).sanitize(annotation, item);
     }
 

@@ -1,21 +1,21 @@
 package com.ljunggren.sanitizer.sanitation;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import com.ljunggren.sanitizer.Sanitizer;
-import com.ljunggren.sanitizer.annotation.LowercaseSanitation;
+import com.ljunggren.sanitizer.annotation.Lowercase;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public class LowercaseSanitationChainTest {
+public class LowercaseSanitationTest {
     
     @AllArgsConstructor
     @Getter
     private class LowercasePojo {
-        @LowercaseSanitation
+        @Lowercase
         private String name;
     }
 

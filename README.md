@@ -4,7 +4,7 @@ Annotate member variables for sanitation
 
 ```java
 public class User {
-	@ConcurrentSpaceSanitation
+	@ConcurrentSpace
 	private String name;
 }
 ```
@@ -21,12 +21,12 @@ Sanitize
 sanitizer.sanitize();
 ```
 
-## Concurrent Space Sanitation ##
+## Concurrent Space ##
 
 Replaces all concurrent spaces with single space
 
 ```java
-@ConcurrentSpaceSanitation
+@ConcurrentSpace
 ```
 
 Example:
@@ -46,23 +46,23 @@ John Doe
 Data types supported
 - String
 
-## Lowercase Sanitation ##
+## Lowercase ##
 
 Lowercase all characters
 
 ```java
-@LowercaseSanitation
+@Lowercase
 ```
 
 Data types supported
 - String
 
-## Remove Sanitation ##
+## Remove ##
 
 Removes all instances of given string
 
 ```java
-@RemoveSanitation(toRemove = "-")
+@Remove(toRemove = "-")
 ```
 
 Required
@@ -71,23 +71,23 @@ Required
 Data types supported
 - String
 
-## Trim Sanitation ##
+## Trim ##
 
 Remove leading and trailing spaces
 
 ```java
-@TrimSanitation
+@Trim
 ```
 
 Data types supported
 - String
 
-## Uppercase Sanitation ##
+## Uppercase ##
 
 Uppercase all characters
 
 ```java
-@UppercaseSanitation
+@Uppercase
 ```
 
 Data types supported

@@ -5,17 +5,17 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.ljunggren.sanitizer.Sanitizer;
-import com.ljunggren.sanitizer.annotation.UppercaseSanitation;
+import com.ljunggren.sanitizer.annotation.Uppercase;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public class UppercaseSanitationChainTest {
+public class UppercaseSanitationTest {
 
     @AllArgsConstructor
     @Getter
     private class UppercasePojo {
-        @UppercaseSanitation
+        @Uppercase
         private String name;
     }
 

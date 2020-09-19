@@ -3,14 +3,14 @@ package com.ljunggren.sanitizer.sanitation;
 import java.lang.annotation.Annotation;
 
 import com.ljunggren.sanitizer.Item;
-import com.ljunggren.sanitizer.annotation.UppercaseSanitation;
+import com.ljunggren.sanitizer.annotation.Lowercase;
 import com.ljunggren.sanitizer.cleanser.Cleanser;
-import com.ljunggren.sanitizer.cleanser.UppercaseCleanser;
+import com.ljunggren.sanitizer.cleanser.LowercaseCleanser;
 
-public class UppercaseSanitationChain extends SanitationChain {
+public class LowercaseSanitation extends SanitationChain {
     
-    private Class<?> annotationClass = UppercaseSanitation.class;
-    private Cleanser<String> cleanser = new UppercaseCleanser();
+    private Class<?> annotationClass = Lowercase.class;
+    private Cleanser<String> cleanser = new LowercaseCleanser();
 
     @Override
     public void sanitize(Annotation annotation, Item item) {

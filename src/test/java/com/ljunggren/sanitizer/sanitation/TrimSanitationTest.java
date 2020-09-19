@@ -5,17 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.ljunggren.sanitizer.Sanitizer;
-import com.ljunggren.sanitizer.annotation.TrimSanitation;
+import com.ljunggren.sanitizer.annotation.Trim;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public class TrimSanitationChainTest {
+public class TrimSanitationTest {
     
     @AllArgsConstructor
     @Getter
     private class TrimPojo {
-        @TrimSanitation
+        @Trim
         private String name;
     }
 

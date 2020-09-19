@@ -7,6 +7,8 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface TrimSanitation {
+public @interface Remove {
 
+    String toRemove();
+    
 }

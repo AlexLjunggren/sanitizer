@@ -1,10 +1,10 @@
 package com.ljunggren.sanitizer;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.ljunggren.sanitizer.annotation.LowercaseSanitation;
+import com.ljunggren.sanitizer.annotation.Lowercase;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,7 @@ public class SanitizerTest {
     @AllArgsConstructor
     @Getter
     private class TestPojo {
-        @LowercaseSanitation
+        @Lowercase
         private String name;
     }
 

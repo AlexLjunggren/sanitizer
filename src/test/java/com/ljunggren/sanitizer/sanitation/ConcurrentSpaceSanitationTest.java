@@ -1,21 +1,21 @@
 package com.ljunggren.sanitizer.sanitation;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import com.ljunggren.sanitizer.Sanitizer;
-import com.ljunggren.sanitizer.annotation.ConcurrentSpaceSanitation;
+import com.ljunggren.sanitizer.annotation.ConcurrentSpace;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public class ConcurrentSpaceSanitationChainTest {
+public class ConcurrentSpaceSanitationTest {
     
     @AllArgsConstructor
     @Getter
     private class ConcurrentPojo {
-        @ConcurrentSpaceSanitation
+        @ConcurrentSpace
         private String address;
     }
 

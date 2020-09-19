@@ -5,17 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.ljunggren.sanitizer.Sanitizer;
-import com.ljunggren.sanitizer.annotation.RemoveSanitation;
+import com.ljunggren.sanitizer.annotation.Remove;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public class RemoveSanitationChainTest {
+public class RemoveSanitationTest {
     
     @AllArgsConstructor
     @Getter
     private class RemovePojo {
-        @RemoveSanitation(toRemove = "-")
+        @Remove(toRemove = "-")
         private String phone;
     }
 
