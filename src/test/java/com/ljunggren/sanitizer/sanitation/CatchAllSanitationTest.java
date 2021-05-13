@@ -20,7 +20,7 @@ public class CatchAllSanitationTest {
     }
 
     @Test
-    public void test() {
+    public void sanitizeTest() {
         Pojo pojo = new Pojo(1234);
         new Sanitizer(pojo).sanitize();
         assertEquals(1234, pojo.getNumber());

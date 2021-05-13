@@ -10,6 +10,7 @@ import org.apache.commons.lang3.reflect.FieldUtils;
 
 import com.ljunggren.sanitizer.sanitation.CatchAllSanitation;
 import com.ljunggren.sanitizer.sanitation.ConcurrentSpaceSanitation;
+import com.ljunggren.sanitizer.sanitation.CustomSanitation;
 import com.ljunggren.sanitizer.sanitation.LowercaseSanitation;
 import com.ljunggren.sanitizer.sanitation.RemoveSanitation;
 import com.ljunggren.sanitizer.sanitation.TrimSanitation;
@@ -70,8 +71,9 @@ public class Sanitizer {
                 .nextChain(new RemoveSanitation()
                 .nextChain(new TrimSanitation()
                 .nextChain(new UppercaseSanitation()
+                .nextChain(new CustomSanitation()
                 .nextChain(new CatchAllSanitation()
-                        ))))).sanitize(annotation, item);
+                        )))))).sanitize(annotation, item);
     }
 
 }

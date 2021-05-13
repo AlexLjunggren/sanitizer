@@ -19,7 +19,7 @@ public class SanitizerTest {
     }
 
     @Test
-    public void validateTest() {
+    public void sanitizeTest() {
         TestPojo pojo = new TestPojo("Alex");
         new Sanitizer(pojo).sanitize();
         assertEquals("alex", pojo.getName());

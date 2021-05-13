@@ -93,3 +93,19 @@ Uppercase all characters
 Data types supported
 - String
 
+## Custom ##
+
+Sanitizes against a custom class
+
+```java
+@CustomSanitizer(className = "MyCleanser")
+```
+
+Required
+- className - [String] Package and class name of custom sanitation class
+
+**Note:** Custom validation class must implement the Cleanser interface
+
+## TODO ## 
+
+Handle exception from CustomSanitizer
