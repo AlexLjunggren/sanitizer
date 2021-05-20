@@ -15,7 +15,7 @@ public class RemoveSanitationTest {
     @AllArgsConstructor
     @Getter
     private class RemovePojo {
-        @Remove(toRemove = "-")
+        @Remove("-")
         private String phone;
     }
 

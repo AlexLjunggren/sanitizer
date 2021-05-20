@@ -62,7 +62,7 @@ Data types supported
 Removes all instances of given string
 
 ```java
-@Remove(toRemove = "-")
+@Remove("-")
 ```
 
 Required
