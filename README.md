@@ -98,11 +98,11 @@ Data types supported
 Sanitizes against a custom class
 
 ```java
-@CustomSanitizer(className = "MyCleanser")
+@CustomSanitizer(MyCleanser.class)
 ```
 
 Required
-- className - [String] Package and class name of custom sanitation class
+- value - Class that implements Cleanser
 
 **Note:** Custom validation class must implement the Cleanser interface
 

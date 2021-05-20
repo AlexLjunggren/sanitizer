@@ -1,11 +1,12 @@
 package com.ljunggren.sanitizer.sanitation;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import com.ljunggren.sanitizer.Sanitizer;
 import com.ljunggren.sanitizer.annotation.CustomSanitizer;
+import com.ljunggren.sanitizer.cleanser.LowercaseCleanser;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +16,7 @@ public class CustomSanitationTest {
     @AllArgsConstructor
     @Getter
     private class CustomPojo {
-        @CustomSanitizer(className = "com.ljunggren.sanitizer.cleanser.LowercaseCleanser")
+        @CustomSanitizer(LowercaseCleanser.class)
         private String name;
     }
 
@@ -28,14 +29,14 @@ public class CustomSanitationTest {
     
     @AllArgsConstructor
     @Getter
-    private class InvalidCustomPojo {
-        @CustomSanitizer(className = "not.real.class")
+    private class NonEvaluationPojo {
+        @CustomSanitizer(String.class)
         private String name;
     }
 
     @Test
     public void sanitizeInvalidClassTest() {
-        InvalidCustomPojo pojo = new InvalidCustomPojo("ALEX");
+        NonEvaluationPojo pojo = new NonEvaluationPojo("ALEX");
         new Sanitizer(pojo).sanitize();
         assertEquals("ALEX", pojo.getName());
     }
