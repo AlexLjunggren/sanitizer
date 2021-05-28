@@ -29,7 +29,7 @@ public class CustomSanitation extends SanitationChain {
             if (Cleanser.class.isAssignableFrom(clazz)) {
                 return (Cleanser<Object>) clazz.newInstance();
             }
-            throw new Exception("CustomSanitizer className does not implement Cleanser");
+            throw new Exception(String.format("CustomSanitizer(%s) does not implement Cleanser", clazz.getSimpleName()));
         } catch (ClassNotFoundException e) {
             throw new Exception("CustomSanitizer class not found " + e.getMessage());
         }
