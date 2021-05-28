@@ -14,7 +14,7 @@ public class CustomSanitation extends SanitationChain {
             Class<?> clazz = ((CustomSanitizer) annotation).value();
             try {
                 Cleanser<Object> cleanser = instantiateCleanser(clazz);
-                item.setValue(cleanser.cleanse(item.getValue().toString()));
+                item.setValue(cleanser.cleanse(item.getValue()));
             } catch (Exception e) {
                 // do something with exception
             }
