@@ -50,8 +50,7 @@ public class Sanitizer {
     private List<Field> findObjectFields(Object object) {
         if (object != null) {
             Class<?> clazz = object.getClass();
-            Field[] fields = FieldUtils.getAllFields(clazz);
-            return Arrays.asList(fields);
+            return FieldUtils.getAllFieldsList(clazz);
         }
         return new ArrayList<Field>();
     }
