@@ -21,6 +21,17 @@ Sanitize
 sanitizer.sanitize();
 ```
 
+## Accent ##
+
+Strip accents from characters
+
+```java
+@Accent
+```
+
+Data types supported
+- String
+
 ## Concurrent Space ##
 
 Replaces all concurrent spaces with single space

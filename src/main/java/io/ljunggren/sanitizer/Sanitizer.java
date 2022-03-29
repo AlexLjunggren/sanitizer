@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.reflect.FieldUtils;
 
+import io.ljunggren.sanitizer.sanitation.AccentSanitation;
 import io.ljunggren.sanitizer.sanitation.CatchAllSanitation;
 import io.ljunggren.sanitizer.sanitation.ConcurrentSpaceSanitation;
 import io.ljunggren.sanitizer.sanitation.CustomSanitation;
@@ -70,8 +71,9 @@ public class Sanitizer {
                 .nextChain(new TrimSanitation()
                 .nextChain(new UppercaseSanitation()
                 .nextChain(new CustomSanitation()
+                .nextChain(new AccentSanitation()
                 .nextChain(new CatchAllSanitation()
-                        )))))).sanitize(annotation, item);
+                        ))))))).sanitize(annotation, item);
     }
 
 }
