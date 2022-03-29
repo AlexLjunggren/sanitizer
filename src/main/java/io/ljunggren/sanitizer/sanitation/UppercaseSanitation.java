@@ -14,7 +14,7 @@ public class UppercaseSanitation extends SanitationChain {
 
     @Override
     public void sanitize(Annotation annotation, Item item) {
-        if (annotation.annotationType() == annotationClass && item.getValue() instanceof String) {
+        if (annotation.annotationType() == annotationClass && isString(item)) {
             item.setValue(cleanser.cleanse(item.getValue().toString()));
             return;
         }

@@ -27,7 +27,7 @@ public class CustomSanitation extends SanitationChain {
     private Cleanser<Object> instantiateCleanser(Class<?> clazz) throws Exception {
         try {
             if (Cleanser.class.isAssignableFrom(clazz)) {
-                return (Cleanser<Object>) clazz.newInstance();
+                return (Cleanser<Object>) clazz.getDeclaredConstructor().newInstance();
             }
             throw new Exception(String.format("CustomSanitizer(%s) does not implement Cleanser", clazz.getSimpleName()));
         } catch (ClassNotFoundException e) {

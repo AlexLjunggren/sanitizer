@@ -15,4 +15,8 @@ public abstract class SanitationChain {
     
     public abstract void sanitize(Annotation annotation, Item item);
     
+    protected boolean isString(Item item) {
+        return item.getValue() instanceof String;
+    }
+    
 }
