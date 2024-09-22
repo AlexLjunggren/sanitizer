@@ -19,9 +19,10 @@ public class Item {
     
     public void setValue(Object value) {
         try {
+            this.value = value;
             field.set(object, value);
         } catch (IllegalArgumentException | IllegalAccessException e) {
-            // TODO: Add something here
+            e.printStackTrace();
         }
     }
     

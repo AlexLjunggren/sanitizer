@@ -41,7 +41,7 @@ public class Sanitizer {
                 Object value = FieldUtils.readField(field, object, true);
                 items.add(new Item(object, field, value));
             } catch (IllegalAccessException e) {
-                // TODO: Add something here
+                e.printStackTrace();
             }
         }
         return items;
